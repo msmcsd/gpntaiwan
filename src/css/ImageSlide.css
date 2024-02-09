@@ -1,0 +1,74 @@
+body {
+  background-image: url('../images/veggie21/background/background.jpg');
+}
+
+.image-carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 1;
+  /* transition: opacity 1.5s ease; */
+  background-color: rgba(0, 0, 0, 0);
+}
+
+img.active {
+  opacity: 1;
+}
+
+.left-button,
+.right-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;}
+
+.left-button {
+  left: 0;
+}
+
+.right-button {
+  right: 0;
+}
+
+.indicator-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.indicator.active {
+  background-color: #333;
+}
