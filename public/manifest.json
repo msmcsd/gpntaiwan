@@ -1,16 +1,16 @@
 {
-  "short_name": "RGreat Park Taiwanese Club",
-  "name": "Great Park Taiwanese Club",
+  "short_name": "Veggie Challenges",
+  "name": "Veggie Challenges",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "128x128 64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "gpntaiwan.jpg",
-      "type": "image/jpg",
-      "sizes": "205x131"
+      "src": "veggie.png",
+      "type": "image/png",
+      "sizes": "256x256"
     }
   ],
   "start_url": ".",

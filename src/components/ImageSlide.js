@@ -66,13 +66,13 @@ const ImageSlide = () => {
          onTouchStart={handleTouchStart}
          onTouchEnd={handleTouchEnd}>
       <div className="image-container">
+        <div className="left-button" onClick={goToPrevious}>
+          &lt;
+        </div>
         <img src={imageList[imageNames[currentImageIndex]]} 
              alt={`Image ${currentImageIndex}`} 
              className={activeImageIndex === currentImageIndex ? 'active' : ''}
         />
-        <div className="left-button" onClick={goToPrevious}>
-          &lt;
-        </div>
         <div className="right-button" onClick={goToNext}>
           &gt;
         </div>

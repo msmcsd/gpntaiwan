@@ -41,7 +41,8 @@ html>* {
 img {
   max-width: 100%;
   max-height: 100%;
-  border-radius: 50px;}
+  border-radius: 50px;
+}
 
 img.active {
   opacity: 1;
