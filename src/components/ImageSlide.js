@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../css/ImageSlide.css'; 
 
 function importAll(r) {
@@ -17,6 +17,7 @@ const imageNames = Object.keys(imageList);
 const ImageSlide = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const touchStartX = useRef(null);
 
   useEffect(() => {
     setActiveImageIndex(currentImageIndex);
@@ -42,8 +43,28 @@ const ImageSlide = () => {
     setCurrentImageIndex(index);
   };
 
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (event) => {
+    const touchEndX = event.changedTouches[0].clientX;
+    const touchDistance = touchEndX - touchStartX.current;
+    const threshold = 50; // Adjust as needed
+
+    if (touchDistance > threshold) {
+      // Swipe right
+      goToPrevious();
+    } else if (touchDistance < -threshold) {
+      // Swipe left
+      goToNext();
+    }
+  };
+
   return (
-    <div className="image-carousel-container">
+    <div className="image-carousel-container" 
+         onTouchStart={handleTouchStart}
+         onTouchEnd={handleTouchEnd}>
       <div className="image-container">
         <img src={imageList[imageNames[currentImageIndex]]} 
              alt={`Image ${currentImageIndex}`} 
