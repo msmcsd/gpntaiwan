@@ -5,7 +5,6 @@ html {
 html::after {
   content: '';
   background-image: url('../images/veggie21/background/background.jpg');
-  /* Replace 'your-image.jpg' with the path to your image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,10 +13,8 @@ html::after {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.2;
-  /* Opacity of the background image */
+  opacity: 0.1;
   z-index: -1;
-  /* Ensure the background stays behind other content */
 }
 
 html>* {
@@ -28,6 +25,7 @@ html>* {
 .image-carousel-container {
   position: relative;
   width: 100%;
+  margin-top: 50px;
 }
 
 .image-container {
@@ -43,7 +41,7 @@ html>* {
 img {
   max-width: 100%;
   max-height: 100%;
-}
+  border-radius: 50px;}
 
 img.active {
   opacity: 1;
